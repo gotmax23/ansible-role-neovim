@@ -12,7 +12,7 @@
 [![Github Actions Molecule workflow status][badge-molecule-workflow]][link-molecule-workflow]
 [![Github Actions Galaxy workflow status][badge-galaxy-workflow]][link-galaxy-workflow]
 
-Install neovim editor.
+Ansible role that install the neovim text editor.
 
 ## Beta Warning
 **This role is currently in beta and is not intended for production use. Breaking changes may occur between releases, so please make sure to read the release notes.**

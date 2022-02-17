@@ -6,7 +6,7 @@ galaxy_info:
 
   author: gotmax23
 
-  description: Install neovim editor.
+  description: Ansible role that install the neovim text editor.
 
   license: MIT
 
