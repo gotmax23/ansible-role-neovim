@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+_installw:
+  present: Install
+  absent: Remove
+installw: "{{ _installw[neovim_state] }}"
+
+_neovim_symlink_state:
+  present: link
+  absent: absent

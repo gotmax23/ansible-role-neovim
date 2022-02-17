@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+galaxy_info:
+  role_name: neovim
+
+  author: gotmax23
+
+  description: Install neovim editor.
+
+  license: MIT
+
+  min_ansible_version: 2.11
+
+  platforms:
+    - name: Archlinux
+      versions:
+        - any
+    - name: Debian
+      versions:
+        - buster
+        - bullseye
+    - name: EL
+      versions:
+        - 7
+        - 8
+    - name: Fedora
+      versions:
+        - 34
+        - 35
+        - 36
+    - name: opensuse
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+
+  galaxy_tags:
+    - neovim
+    - linux
+    - vim
+    - text
+    - text_editor
+    - cli
+
+dependencies: []

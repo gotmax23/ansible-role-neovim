@@ -1,0 +1,8 @@
+---
+#
+# Ansible managed
+#
+repository:
+  description: Install neovim editor.
+  homepage: https://galaxy.ansible.com/gotmax23/neovim
+  topics: neovim, linux, vim, text, text_editor, cli, ansible, molecule, ansible-role, role

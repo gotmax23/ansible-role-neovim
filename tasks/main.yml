@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+- name: "{{ installw }} neovim"
+  ansible.builtin.package:
+    name: neovim
+    state: "{{ neovim_state }}"
+
+- name: "{{ installw }} symlink to neovim"
+  when: neovim_symlink_create | bool
+  ansible.builtin.file:  # noqa: risky-file-permissions
+    src: "{{ '/usr/bin/nvim' if neovim_state == 'present' else omit }}"
+    dest: "{{ neovim_symlink_dest }}"
+    state: "{{ 'link' if neovim_state == 'present' else 'absent' }}"

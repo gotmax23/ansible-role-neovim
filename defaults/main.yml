@@ -1,0 +1,11 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: CC0-1.0
+---
+# Options:
+# - `present` ensures that Neovim is installed.
+# - `absent` ensures that Neovim is not installed.
+neovim_state: present
+
+neovim_symlink_create: true
+
+neovim_symlink_dest: /usr/local/bin/vim

@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2022 Maxwell G (@gotmax23)
+# SPDX-License-Identifier: MIT
+---
+- name: Converge
+  hosts: all
+  become: true
+
+  vars:
+    neovim_molecule_env_vars:
+      - neovim_state
+      - neovim_symlink_create
+      - neovim_symlink_dest
+
+  tasks:
+    - name: Set role variables if they are defined as env variables
+      loop: "{{ neovim_molecule_env_vars }}"
+      when:
+        - lookup('env', item) is string
+        - lookup('env', item) != ""
+      ansible.builtin.set_fact:
+        "{{ item }}": "{{ lookup('env', item) }}"
+
+    -
+      loop: "{{ neovim_molecule_env_vars }}"
+      ansible.builtin.debug:
+        msg: "{{ lookup('vars', item, default='') }}"
+
+    - name: "Include gotmax23.neovim"
+      ansible.builtin.include_role:
+        name: "gotmax23.neovim"
