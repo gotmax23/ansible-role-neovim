@@ -6,6 +6,7 @@
 # - `absent` ensures that Neovim is not installed.
 neovim_state: present
 
+# Whether to create a symlink from /usr/bin/nvim to neovim_symlink_dest.
 neovim_symlink_create: true
 
 neovim_symlink_dest: /usr/local/bin/vim

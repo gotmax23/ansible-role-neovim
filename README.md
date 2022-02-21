@@ -90,6 +90,7 @@ Here are this role's variables and their default values, as set in [`defaults/ma
 # - `absent` ensures that Neovim is not installed.
 neovim_state: present
 
+# Whether to create a symlink from /usr/bin/nvim to neovim_symlink_dest.
 neovim_symlink_create: true
 
 neovim_symlink_dest: /usr/local/bin/vim
@@ -142,7 +143,7 @@ This role is compatible with the following distros:
 ## Author
 Maxwell G (@gotmax23)
 
-[badge-role]: https://img.shields.io/ansible/role/.svg?logo=ansible
+[badge-role]: https://img.shields.io/ansible/role/58064.svg?logo=ansible
 [link-galaxy]: https://galaxy.ansible.com/gotmax23/neovim
 [badge-github-repo]: https://img.shields.io/static/v1?label=GitHub&message=repo&color=blue&logo=github
 [link-github-repo]: https://github.com/gotmax23/ansible-role-neovim
@@ -157,8 +158,8 @@ Maxwell G (@gotmax23)
 [badge-version]: https://img.shields.io/github/release/gotmax23/ansible-role-neovim.svg?logo=github
 [link-version]: https://github.com/gotmax23/ansible-role-neovim/releases/latest
 [badge-commits-since]: https://img.shields.io/github/commits-since/gotmax23/ansible-role-neovim/latest.svg?logo=github
-[badge-quality]: https://img.shields.io/ansible/quality/.svg?logo=ansible
-[badge-downloads]: https://img.shields.io/ansible/role/d/.svg?logo=ansible
+[badge-quality]: https://img.shields.io/ansible/quality/58064.svg?logo=ansible
+[badge-downloads]: https://img.shields.io/ansible/role/d/58064.svg?logo=ansible
 [badge-molecule-workflow]: https://github.com/gotmax23/ansible-role-neovim/actions/workflows/molecule.yml/badge.svg?branch=main
 [link-molecule-workflow]: https://github.com/gotmax23/ansible-role-neovim/actions/workflows/molecule.yml
 [badge-galaxy-workflow]: https://github.com/gotmax23/ansible-role-neovim/actions/workflows/galaxy.yml/badge.svg
