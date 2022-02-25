@@ -9,6 +9,8 @@
   gather_facts: false
 
   vars:
+    generator_molecule_workflow_cron: ""
+    generator_molecule_workflow_cron_random: false
     generator_molecule_wflow_test:
       skip_test_step: true
       steps:
