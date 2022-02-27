@@ -12,3 +12,23 @@
     src: "{{ '/usr/bin/nvim' if neovim_state == 'present' else omit }}"
     dest: "{{ neovim_symlink_dest }}"
     state: "{{ 'link' if neovim_state == 'present' else 'absent' }}"
+
+- name: Install neovim configurtion
+  when:
+    - neovim_install_config | bool
+  block:
+    - name: Create neovim config directory
+      ansible.builtin.file:
+        dest: "{{ neovim_config_dir }}"
+        state: directory
+        mode: "0744"
+        owner: "{{ neovim_config_owner }}"
+        group: "{{ neovim_config_group }}"
+
+    - name: Install neovim configuration file
+      ansible.builtin.template:
+        src: "{{ neovim_config_template }}"
+        dest: "{{ neovim_config_dest }}"
+        mode: "0644"
+        owner: "{{ neovim_config_owner }}"
+        group: "{{ neovim_config_group }}"
