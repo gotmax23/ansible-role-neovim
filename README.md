@@ -63,10 +63,28 @@ Here are this role's variables and their default values, as set in [`defaults/ma
 # - `absent` ensures that Neovim is not installed.
 neovim_state: present
 
+
 # Whether to create a symlink from /usr/bin/nvim to neovim_symlink_dest.
 neovim_symlink_create: true
 
 neovim_symlink_dest: /usr/local/bin/vim
+
+
+# Whether to install a neovim config file
+neovim_install_config: true
+
+# Which template to use for the neovim config file.
+# The default template makes neovim more compatible with vim by sourcing the
+# ~/.vimrc and plugins stored in ~/.vim/pack/*/start.
+neovim_config_template: "init.vim.j2"
+
+neovim_config_dir: "/home/{{ neovim_config_owner }}/.config/nvim"
+
+neovim_config_owner: "{{ ansible_user }}"
+
+neovim_config_group: "{{ neovim_config_owner }}"
+
+neovim_config_dest: "{{ neovim_config_dir }}/init.vim"
 
 ```
 
