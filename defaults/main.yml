@@ -17,7 +17,7 @@ neovim_symlink_dest: /usr/local/bin/vim
 neovim_install_config: true
 
 # Which template to use for the neovim config file.
-# The default template makes neovim more compatible with vim by sourcing the 
+# The default template makes neovim more compatible with vim by sourcing the
 # ~/.vimrc and plugins stored in ~/.vim/pack/*/start.
 neovim_config_template: "init.vim.j2"
 
