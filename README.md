@@ -80,7 +80,7 @@ neovim_config_template: "init.vim.j2"
 
 neovim_config_dir: "/home/{{ neovim_config_owner }}/.config/nvim"
 
-neovim_config_owner: "{{ ansible_user }}"
+neovim_config_owner: "{{ ansible_user_id }}"
 
 neovim_config_group: "{{ neovim_config_owner }}"
 
