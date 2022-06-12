@@ -18,6 +18,8 @@ Ansible role that install the neovim text editor.
 **This role is currently in beta and is not intended for production use. Breaking changes may occur between releases, so please make sure to read the release notes.**
 ## Requirements
 
+If you are using Enterprise Linux (CentOS, Rocky Linux, Alamlinux, RHEL, etc.), you need to install the EPEL repository. You can use the [`robertdebock.epel`](https://github.com/robertdebock/ansible-role-epel) role to do so. See the [example playbook](#example-playbook) for a a full example.
+
 This role depends on certain collections that are not included in ansible-core.
 
 This role's [example playbook](#example-playbook) requires another role to prepare the target system.

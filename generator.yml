@@ -25,6 +25,7 @@
         - name: Molecule destroy
           if: always()
           run: molecule destroy -s single
+    generator_epel_required: true
 
   roles:
     - gotmax23.generator
