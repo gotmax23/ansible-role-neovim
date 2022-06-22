@@ -6,12 +6,23 @@
     name: neovim
     state: "{{ neovim_state }}"
 
-- name: "{{ installw }} symlink to neovim"
+- name: "{{ installw }} vim > neovim wrapper"
   when: neovim_symlink_create | bool
-  ansible.builtin.file:  # noqa: risky-file-permissions
-    src: "{{ '/usr/bin/nvim' if neovim_state == 'present' else omit }}"
-    dest: "{{ neovim_symlink_dest }}"
-    state: "{{ 'link' if neovim_state == 'present' else 'absent' }}"
+  block:
+    - name: Install vim > neovim wrapper
+      when: neovim_state == "present"
+      ansible.builtin.copy:
+        src: vim
+        dest: "{{ neovim_symlink_dest }}"
+        owner: root
+        group: root
+        mode: "0755"
+
+    - name: Remove vim > neovim wrapper
+      when: neovim_state == "absent"
+      ansible.builtin.file:
+        dest: "{{ neovim_symlink_dest }}"
+        state: absent
 
 - name: Install neovim configurtion
   when:
@@ -21,7 +32,7 @@
       ansible.builtin.file:
         dest: "{{ neovim_config_dir }}"
         state: directory
-        mode: "0744"
+        mode: "0755"
         owner: "{{ neovim_config_owner }}"
         group: "{{ neovim_config_group }}"
 
